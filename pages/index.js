@@ -1,12 +1,23 @@
 import Head from 'next/head'
 import Layout from '../components/Layout'
 import Header from '../components/Header'
+import About from '../components/About'
+import Projects from '../components/Projects'
+import WorkHistory from '../components/WorkHistory'
+import Contact from '../components/Contact'
 
 const Index = ({ title, description, ...props }) => {
   return (
-    <Layout pageTitle={title} className="font-sans">
-      <Header />
+    <>
+    <Layout pageTitle={title} className="font-sans">    
+    <Header />
+
+      <About />
+      <Projects />
+      <WorkHistory />
+      <Contact />
     </Layout>
+    </>
   )
 }
 
