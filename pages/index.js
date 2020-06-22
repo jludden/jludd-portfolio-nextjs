@@ -1,16 +1,11 @@
 import Head from 'next/head'
 import Layout from '../components/Layout'
+import Header from '../components/Header'
 
 const Index = ({ title, description, ...props }) => {
   return (
-    <Layout pageTitle={title}>
-      <h1 className="title">Welcome</h1>
-      <p className="dsecription">
-        {description}
-      </p>
-      <main>
-        content here
-      </main>
+    <Layout pageTitle={title} className="font-sans">
+      <Header />
     </Layout>
   )
 }
