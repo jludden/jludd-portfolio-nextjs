@@ -7,10 +7,34 @@ import WorkHistory from '../components/WorkHistory'
 import Contact from '../components/Contact'
 
 const Index = ({ title, description, ...props }) => {
+
+ 
+
   return (
     <>
+    <Head>
+        <title>Jason's Portfolio</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
     <Layout pageTitle={title} className="font-sans">    
-    <Header />
+      {/* <nav>
+        <span className={activeSection === 0 ? "nav-item nav-item--active" : "nav-item"}>Section 1</span>
+        <span className={activeSection === 1 ? "nav-item nav-item--active" : "nav-item"}>Section 2</span>
+        <span className={activeSection === 2 ? "nav-item nav-item--active" : "nav-item"}>Section 3</span>
+      </nav> */}
+<div>
+
+<div>
+  <section id="section-1">section 1</section>
+  <section id="section-2">section 2</section>
+  <section id="section-3">section 3</section>
+</div>
+
+
+
+</div>
+
+      <Header />
 
       <About />
       <Projects />
@@ -96,6 +120,15 @@ function Home() {
       </footer>
 
       <style jsx>{`
+
+        .nav-item {
+          color: #0070f3;
+        }
+
+        .nav-item--active {
+          text-decoration: underline;
+        }
+
         .container {
           min-height: 100vh;
           padding: 0 0.5rem;

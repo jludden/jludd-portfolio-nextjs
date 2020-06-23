@@ -1,5 +1,6 @@
 import Link from 'next/link'
 
+import Scrollspy from 'react-scrollspy';
 const Header = () => (
   <header className="fixed top-0 inset-x-0 .z-auto bg-white shadow border-t-4 border-indigo-600">
   <div className="container mx-auto px-6 py-4">
@@ -13,7 +14,23 @@ const Header = () => (
                   <span className="mx-3 font-medium text-sm md:text-base">Jason Ludden</span>
               </a>
           </div>
-          <div className="flex items-center -mx-2">
+
+          <Scrollspy items={ ['About', 'Showcase', 'CV', 'Contact'] } currentClassName="is-current">
+            <li><a href="#About">About</a></li>
+            <li><a href="#Showcase">Showcase</a></li>
+            <li><a href="#CV">CV</a></li>
+            <li><a href="#Contact">Contact</a></li>
+            <style jsx>{`
+
+                  .is-current {
+                    background-color: aqua
+                                    }
+                  `}
+                  </style>
+          </Scrollspy>
+
+
+          <div className="flex items-center mx-2">
               <a className="flex items-center mx-2 text-gray-800 hover:text-indigo-600" 
                 title="View Resume"
                 href="#">
@@ -42,6 +59,7 @@ const Header = () => (
       </div>
   </div>
 </header>
+
 )
 
 

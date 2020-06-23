@@ -1,18 +1,18 @@
 import Avatar from '../public/static/avatar-jason.svg';
 
 const About = () =>
-(
-    <>
-<section className="bg-white mt-20">
-            <div className="max-w-2xl px-6 text-center mx-auto">
-                <h2 className="text-3xl font-semibold text-gray-800">Hi, <span className="bg-indigo-600 text-white rounded px-1">I’m Jason</span> . Nice to meet you.</h2>
-                <p className="text-gray-600 mt-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. A aliquam veniam suscipit eaque iure, eligendi harum expedita cupiditate sequi, culpa autem! Quaerat ex fugit iste suscipit reiciendis, accusamus ipsum quae.</p>
+    (
+        <>
+            <section id="About" className="bg-white mt-20">
+                <div className="max-w-2xl px-6 text-center mx-auto">
+                    <h2 className="text-3xl font-semibold text-gray-800">Hi, <span className="bg-indigo-600 text-white rounded px-1">I’m Jason</span></h2>
+                    <p className="text-gray-600 mt-4">I guess you saw my job applicant right? Let me tell you a bit about myself....</p>
 
-                <div className="flex items-end justify-center mt-16">
+                    <div className="flex items-end justify-center mt-16">
 
-                    <Avatar />
+                        <Avatar className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110" />
 
-                    <svg width="189" height="188" viewBox="0 0 189 188" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        {/* <svg width="189" height="188" viewBox="0 0 189 188" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clipPath="url(#clip0)">
                             <path d="M94.074 188.148C146.03 188.148 188.148 146.03 188.148 94.074C188.148 42.1184 146.03 0 94.074 0C42.1184 0 0 42.1184 0 94.074C0 146.03 42.1184 188.148 94.074 188.148Z" fill="#2D3748"/>
                             <path d="M135.938 52.784V84.05C135.938 84.503 135.927 84.955 135.917 85.407C135.897 86.343 135.845 87.278 135.763 88.203C135.743 88.522 135.711 88.84 135.67 89.159C135.536 90.485 135.352 91.791 135.115 93.087C135.032 93.519 134.95 93.94 134.857 94.362C134.847 94.454 134.827 94.537 134.806 94.619C134.723 95.051 134.62 95.473 134.518 95.894C134.477 96.12 134.415 96.346 134.364 96.573C134.312 96.768 134.261 96.964 134.2 97.159C133.983 98.002 133.737 98.825 133.479 99.647C133.356 100.038 133.233 100.418 133.099 100.809C133.088 100.85 133.068 100.891 133.058 100.932C132.934 101.281 132.811 101.631 132.688 101.98C132.647 102.083 132.606 102.185 132.564 102.299C132.441 102.628 132.318 102.957 132.184 103.286C132.03 103.687 131.866 104.078 131.701 104.469C131.557 104.819 131.403 105.168 131.249 105.518C131.229 105.58 131.197 105.631 131.177 105.692C131.002 106.062 130.838 106.433 130.663 106.792C130.488 107.172 130.303 107.553 130.107 107.934C129.737 108.684 129.336 109.435 128.935 110.165C128.75 110.494 128.565 110.823 128.379 111.152C126.796 113.877 125.038 116.437 123.126 118.801C122.868 119.14 122.602 119.469 122.324 119.788C121.943 120.25 121.552 120.703 121.162 121.145C120.812 121.536 120.463 121.926 120.103 122.307C119.116 123.366 118.108 124.374 117.08 125.32C116.875 125.526 116.658 125.711 116.442 125.906C116.093 126.225 115.744 126.533 115.383 126.831C115.106 127.078 114.818 127.314 114.529 127.551C113.789 128.157 113.049 128.743 112.299 129.288C111.99 129.525 111.671 129.751 111.353 129.967C110.839 130.337 110.315 130.687 109.79 131.026C109.502 131.221 109.204 131.406 108.905 131.581C107.856 132.229 106.798 132.825 105.749 133.339C105.492 133.472 105.235 133.596 104.978 133.719C104.72 133.842 104.454 133.966 104.176 134.089C103.836 134.243 103.497 134.387 103.158 134.521C103.024 134.583 102.89 134.634 102.757 134.675C102.357 134.84 101.945 134.994 101.544 135.127C101.04 135.312 100.526 135.466 100.023 135.61C99.673 135.713 99.314 135.805 98.964 135.887C98.943 135.898 98.923 135.908 98.892 135.908C98.542 135.99 98.193 136.073 97.843 136.134C97.75 136.155 97.659 136.175 97.566 136.185C97.278 136.236 96.99 136.288 96.702 136.319C96.291 136.381 95.88 136.432 95.469 136.453C95.326 136.473 95.192 136.484 95.047 136.484C94.719 136.505 94.39 136.515 94.07 136.515H94.04C93.721 136.515 93.402 136.505 93.084 136.484C92.96 136.484 92.837 136.474 92.713 136.453C92.426 136.443 92.127 136.411 91.819 136.37C91.757 136.37 91.685 136.36 91.624 136.35C91.243 136.299 90.863 136.237 90.472 136.165C90.144 136.114 89.815 136.041 89.475 135.959C87.717 135.558 85.908 134.952 84.078 134.139C82.515 133.45 80.932 132.618 79.359 131.651C78.567 131.168 77.775 130.654 76.994 130.109C76.603 129.831 76.213 129.554 75.822 129.266C74.598 128.371 73.385 127.395 72.192 126.346C71.864 126.048 71.535 125.75 71.206 125.441C70.877 125.143 70.548 124.835 70.229 124.537C69.426 123.766 68.645 122.964 67.884 122.131C67.586 121.813 67.288 121.484 66.989 121.144C66.167 120.219 65.365 119.263 64.604 118.265C64.305 117.905 64.028 117.535 63.75 117.165C62.712 115.788 61.725 114.348 60.799 112.857C60.553 112.456 60.306 112.044 60.07 111.644C59.782 111.161 59.505 110.668 59.227 110.174C58.199 108.323 57.252 106.401 56.43 104.416C56.307 104.128 56.183 103.84 56.08 103.553C55.915 103.183 55.771 102.802 55.638 102.432C55.433 101.887 55.238 101.342 55.052 100.797C54.867 100.252 54.693 99.697 54.518 99.142C54.353 98.607 54.199 98.073 54.055 97.528C53.89 96.952 53.737 96.366 53.603 95.77C53.592 95.708 53.572 95.647 53.562 95.585C53.367 94.763 53.192 93.93 53.038 93.087C52.832 91.976 52.668 90.845 52.544 89.704C52.493 89.344 52.462 88.984 52.431 88.624C52.39 88.244 52.36 87.873 52.339 87.493C52.287 86.804 52.256 86.105 52.235 85.406C52.225 84.953 52.214 84.501 52.214 84.049V52.784C52.214 29.682 70.937 10.95 94.039 10.929H94.08C97.268 10.929 100.372 11.288 103.353 11.957C106.078 12.574 108.7 13.458 111.188 14.579C114.581 16.101 117.737 18.054 120.575 20.388C122.96 22.342 125.13 24.542 127.021 26.968C132.607 34.083 135.938 43.038 135.938 52.784Z" fill="#ECC19C"/>
@@ -39,19 +39,19 @@ const About = () =>
                                 <rect width="188.148" height="188.148" fill="white"/>
                             </clipPath>
                         </defs>
-                    </svg>
+                    </svg> */}
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section className="bg-gray-800 pattern py-20">
-            <div className="max-w-5xl px-6 mx-auto text-center">
-                <h2 className="text-2xl font-semibold text-white">About Me</h2>
+            <section className="bg-gray-800 pattern py-20">
+                <div className="max-w-5xl px-6 mx-auto text-center">
+                    <h2 className="text-2xl font-semibold text-white">About Me</h2>
 
-                <p className="text-gray-400 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ullamcorper nulla nunc quis molestie volutpat elementum at. Ultrices ipsum, enim cursus lorem ac. Orci maecenas praesent arcu eget orci est orci nullam. Leo purus est pellentesque massa at tortor, est. Aliquet pulvinar a mattis sagittis. Suspendisse porta id elementum, massa.</p>
-            </div>
-        </section>
+                    <p className="text-gray-400 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ullamcorper nulla nunc quis molestie volutpat elementum at. Ultrices ipsum, enim cursus lorem ac. Orci maecenas praesent arcu eget orci est orci nullam. Leo purus est pellentesque massa at tortor, est. Aliquet pulvinar a mattis sagittis. Suspendisse porta id elementum, massa.</p>
+                </div>
+            </section>
         </>
     );
 
-    export default About;
+export default About;

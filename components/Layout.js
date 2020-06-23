@@ -1,4 +1,17 @@
+import React, { useRef } from 'react';
+// import useScrollSpy from 'react-use-scrollspy';
+
 export default function Layout({ children, pageTitle }) {
+  const sectionRefs = [
+    useRef(null),
+    useRef(null),
+    useRef(null),
+  ];
+
+  // const activeSection = useScrollSpy({
+  //   sectionElementRefs: sectionRefs,
+  //   offsetPx: -80,
+  // });
   return (
     <>
     <main className="font-sans">

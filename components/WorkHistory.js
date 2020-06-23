@@ -1,6 +1,6 @@
 export default function WorkHistory() {
     return (
-        <section class="bg-white py-20">
+        <section id="CV" class="bg-white py-20">
             <div class="max-w-5xl px-6 mx-auto text-center">
                 <h2 class="text-2xl font-semibold text-gray-800">Work History</h2>
 
@@ -39,7 +39,7 @@ export default function WorkHistory() {
                         <span>View More</span>
 
                         <svg class="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                         </svg>
                     </a>
                 </div>

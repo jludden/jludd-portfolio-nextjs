@@ -1,7 +1,7 @@
 export default function ContactForm() {
   return (
-    <section className="bg-gray-800 pattern py-20 mt-20">
-      <div className="bg-gray-300 max-w-2xl py-10 px-6 text-center rounded-lg mx-auto">
+    <section id="Contact" className="bg-gray-800 pattern py-20 mt-20">
+      <div className="bg-gray-300 max-w-2xl py-10 px-6 text-center rounded-lg mx-auto shadow-xl">
         <form className="w-full max-w-lg mx-auto">
           <div className="flex flex-wrap -mx-3 mb-6">
             <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
