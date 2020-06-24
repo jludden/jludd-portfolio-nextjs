@@ -8,8 +8,6 @@ import Contact from '../components/Contact'
 
 const Index = ({ aboutMeIntro, aboutMeMain, contactMeMessage, contactMeEmail }) => {
 
-
-
   return (
     <>
       <Head>
