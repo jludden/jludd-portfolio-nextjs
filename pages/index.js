@@ -6,41 +6,25 @@ import Projects from '../components/Projects'
 import WorkHistory from '../components/WorkHistory'
 import Contact from '../components/Contact'
 
-const Index = ({ title, description, ...props }) => {
+const Index = ({ aboutMeIntro, aboutMeMain, contactMeMessage, contactMeEmail }) => {
 
- 
+
 
   return (
     <>
-    <Head>
+      <Head>
         <title>Jason's Portfolio</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-    <Layout pageTitle={title} className="font-sans">    
-      {/* <nav>
-        <span className={activeSection === 0 ? "nav-item nav-item--active" : "nav-item"}>Section 1</span>
-        <span className={activeSection === 1 ? "nav-item nav-item--active" : "nav-item"}>Section 2</span>
-        <span className={activeSection === 2 ? "nav-item nav-item--active" : "nav-item"}>Section 3</span>
-      </nav> */}
-<div>
+      <Layout className="font-sans">
 
-<div>
-  <section id="section-1">section 1</section>
-  <section id="section-2">section 2</section>
-  <section id="section-3">section 3</section>
-</div>
+        <Header />
 
-
-
-</div>
-
-      <Header />
-
-      <About />
-      <Projects />
-      <WorkHistory />
-      <Contact />
-    </Layout>
+        <About aboutMeIntro={aboutMeIntro} aboutMeMain={aboutMeMain} />
+        <Projects />
+        <WorkHistory />
+        <Contact contactMeMessage={contactMeMessage} contactMeEmail={contactMeEmail} />
+      </Layout>
     </>
   )
 }
@@ -54,6 +38,10 @@ export async function getStaticProps() {
     props: {
       title: configData.default.title,
       description: configData.default.description,
+      aboutMeIntro: configData.default.aboutMeIntro,
+      aboutMeMain: configData.default.aboutMeMain,
+      contactMeMessage: configData.default.contactMeMessage,
+      contactMeEmail: configData.default.contactMeEmail
     },
   }
 }

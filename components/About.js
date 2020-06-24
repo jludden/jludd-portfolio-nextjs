@@ -1,14 +1,14 @@
 import Avatar from '../public/static/avatar-jason.svg';
 
-const About = () =>
+const About = ({aboutMeIntro, aboutMeMain}) =>
     (
         <>
-            <section id="About" className="bg-white mt-20">
-                <div className="max-w-2xl px-6 text-center mx-auto">
+            <section id="About" className="bg-white mt-8 pt-10">
+                <div className="max-w-2xl px-6 text-center mx-auto pt-20">
                     <h2 className="text-3xl font-semibold text-gray-800">Hi, <span className="bg-indigo-600 text-white rounded px-1">I’m Jason</span></h2>
-                    <p className="text-gray-600 mt-4">I guess you saw my job applicant right? Let me tell you a bit about myself....</p>
+                    <p className="text-gray-600 mt-4">{aboutMeIntro}</p>
 
-                    <div className="flex items-end justify-center mt-16">
+                    <div className="flex items-end justify-center mt-4">
 
                         <Avatar className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110" />
 
@@ -48,7 +48,7 @@ const About = () =>
                 <div className="max-w-5xl px-6 mx-auto text-center">
                     <h2 className="text-2xl font-semibold text-white">About Me</h2>
 
-                    <p className="text-gray-400 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ullamcorper nulla nunc quis molestie volutpat elementum at. Ultrices ipsum, enim cursus lorem ac. Orci maecenas praesent arcu eget orci est orci nullam. Leo purus est pellentesque massa at tortor, est. Aliquet pulvinar a mattis sagittis. Suspendisse porta id elementum, massa.</p>
+                    <p className="text-gray-400 mt-4">{aboutMeMain}</p>
                 </div>
             </section>
         </>
