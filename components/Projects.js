@@ -1,5 +1,62 @@
+import { Children } from "react";
+
+export const ProjectCard = ({ imgSrc, altText, titleText, detailsText, children }) => (
+    <div className="flex-grow m-6 max-w-md lg:max-w-lg rounded  shadow-lg">
+
+    <div className="flex flex-grow">
+        <div className="flex content-center">
+            <div className="overflow-hidden">
+            <img className="w-full" src={imgSrc} alt={altText} />
+            </div>
+        </div>
+
+        <div className="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">            
+            <div className="px-4 py-6">
+                <div className="font-bold text-xl mb-2">{titleText}</div>
+                <p className="text-gray-600 text-base">{detailsText}</p>
+                {children}
+            </div>
+        </div>
+    </div>
+    </div> 
+)
+
+export const ProjectCard1 = ({ imgSrc, altText, titleText, detailsText, children }) => (
+    <div className="max-w-sm rounded overflow-hidden shadow-lg">
+        <img className="w-full" src={imgSrc} alt={altText} />
+        <div className="px-4 py-6">
+            <div className="font-bold text-xl mb-2">{titleText}</div>
+            <p className="text-gray-600 text-base">{detailsText}</p>
+            {children}
+        </div>
+    </div>
+)
+
 export default function () {
     return (
+        <>
+        <section>
+            <div className="flex flex-col md:flex-row">
+                <ProjectCard 
+                    imgSrc="static/rls_cardview.png"
+                    altText="ReefLifeSurvey card view layout"   
+                    titleText="ReefLifeSurvey - Species Explorer" 
+                    detailsText="Android application for browsing fish species and survey site locations based on data collected by the Australian non-profit ReefLifeSurvey"
+                >
+
+                </ProjectCard>
+                <ProjectCard 
+                    imgSrc="static/rls_cardview.png"
+                    altText="ReefLifeSurvey card view layout"   
+                    titleText="ReefLifeSurvey - Species Explorer" 
+                    detailsText="Android application for browsing fish species and survey site locations based on data collected by the Australian non-profit ReefLifeSurvey"
+                >
+
+                </ProjectCard>
+            </div>
+        </section>
+
+
         <section id="Showcase" className="bg-gray-800 pattern py-20">
             <div className="max-w-5xl px-6 mx-auto text-center">
                 <h2 className="text-2xl font-semibold text-white">Selected Projects</h2>
@@ -61,5 +118,6 @@ export default function () {
                 </div>
             </div>
         </section>
+        </>
     );
 }

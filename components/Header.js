@@ -1,6 +1,11 @@
 import Link from 'next/link'
 
 import Scrollspy from 'react-scrollspy';
+
+const HeaderLink = ({anchor, label}) => (
+  <li className="pr-2 text-gray-800 hover:text-indigo-600"><a href={anchor}>{label}</a></li>
+)
+
 const Header = () => (
   <header className="fixed top-0 inset-x-0 z-30 bg-white shadow border-t-4 border-indigo-600">
     <nav className="flex items-center justify-between flex-wrap p-6">
@@ -13,34 +18,16 @@ const Header = () => (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
 
-              <span className="mx-3 font-medium text-sm md:text-base">Jason Ludden</span>
+              <span className="ml-3 font-medium text-sm md:text-base">Jason Ludden</span>
             </a>
           </div>
 
-          {/* Scrollspy Nav - only show >= medium */}
-          <Scrollspy items={['About', 'Showcase', 'CV', 'Contact']} currentClassName="is-current" className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-            <li className="pr-2 text-gray-800 hover:text-indigo-600"><a href="#About">About</a></li>
-            <li className="pr-2 text-gray-800 hover:text-indigo-600"><a href="#Showcase">Showcase</a></li>
-            <li className="pr-2 text-gray-800 hover:text-indigo-600"><a href="#CV">CV</a></li>
-            <li className="pr-2 text-gray-800 hover:text-indigo-600"><a href="#Contact">Contact</a></li>
-            <style jsx>{`
-
-                    .is-current {
-                      text-decoration: underline;
-                                      }
-                    `}
-            </style>
-          </Scrollspy>
-
-
-          {/* Icon Links - only show >= medium */}
-          <div className="hidden md:flex items-center mx-2">
+        {/* Icon Links - only show >= medium */}
+        <div className="hidden md:flex items-center mx-2">
             <a className="flex items-center mx-2 text-gray-800 hover:text-indigo-600"
               title="View Resume"
               href="#">
-              <svg className="h-5 w-5 sm:h-6 sm:w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M19 11H5M19 11C20.1046 11 21 11.8954 21 13V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V13C3 11.8954 3.89543 11 5 11M19 11V9C19 7.89543 18.1046 7 17 7M5 11V9C5 7.89543 5.89543 7 7 7M7 7V5C7 3.89543 7.89543 3 9 3H15C16.1046 3 17 3.89543 17 5V7M7 7H17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
             </a>
 
             <a className="flex items-center mx-2 text-gray-800 hover:text-indigo-600"
@@ -61,15 +48,49 @@ const Header = () => (
             </a>
           </div>
 
+
+
+{/* 
+          <HeaderLink anchor="#About" text="About" />
+            <HeaderLink anchor="#Showcase" text="Showcase" />
+            <HeaderLink anchor="#CV" text="CV" />
+            <HeaderLink anchor="#Contact" text="Contact" /> */}
+          {/* Scrollspy Nav - only show >= medium */}
+          <Scrollspy items={['About', 'Showcase', 'CV', 'Contact']} currentClassName="is-current" className="md:ml-auto flex flex-wrap items-center text-base justify-center">
+         
+            <li className="pr-2 text-gray-800 hover:text-indigo-600">
+              <a className="text-sm md:text-base" href="#About">About</a>
+            </li>
+            <li className="pr-2 text-gray-800 hover:text-indigo-600">
+              <a className="text-sm md:text-base" href="#Showcase">Showcase</a>
+            </li>
+            <li className="pr-2 text-gray-800 hover:text-indigo-600">
+              <a className="text-sm md:text-base" href="#CV">CV</a>
+            </li>
+            <li className="pr-2 text-gray-800 hover:text-indigo-600">
+              <a className="text-sm md:text-base" href="#Contact">Contact</a>
+            </li>
+            <style jsx>{`
+                          .is-current {
+                            text-decoration: underline;
+                          }
+                          `                        
+                        }
+            </style>
+          </Scrollspy>
+
+
+          
+
           {/* Hamburger - only show < medium */}
-          <div className="block md:hidden">
+          {/* <div className="block md:hidden">
           <button className="flex items-center px-3 py-2 border rounded text-gray-800 border-gray-800 hover:text-indigo-600 hover:border-indigo-600">
             <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
             <title>Menu</title> 
             <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
             </svg>
             </button>
-          </div>
+          </div> */}
 
 
 
