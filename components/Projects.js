@@ -4,37 +4,35 @@
 export const Chip = ({ text }) => (
     // <div className="rounded-full leading-snug p-2 m-1 bg-gray-600 text-white text-xs  items-center justify-center">{t}</div>
     // ))}  
-     <div className="flex justify-center items-center m-1 font-medium py-1 px-2 rounded-full text-indigo-100 bg-indigo-700 border border-indigo-700 ">
-        <div className="text-xs font-normal leading-none max-w-full flex-initial">{text}</div>            
+     <div className="flex justify-center items-center m-1 font-medium py-1 px-2 rounded-full text-indigo-100 bg-indigo-600 border border-indigo-700 ">
+        <span className="text-xs font-semibold leading-none max-w-full flex-initial">{text}</span>            
     </div>
 )
 
-export const LandscapeImageCard = ({ imgSrc, imgHeight, altText, titleText, detailsText, chips, children }) => (
+// export const Chip = ({ text }) => (
+//     // <div className="rounded-full leading-snug p-2 m-1 bg-gray-600 text-white text-xs  items-center justify-center">{t}</div>
+//     // ))}  
+//      <div className="flex justify-center items-center m-1 font-medium py-1 px-2 rounded-full text-indigo-100 bg-indigo-700 border border-indigo-700 ">
+//         <div className="text-xs uppercase leading-none tracking-wide max-w-full flex-initial">{text}</div>            
+//     </div>
+// )
+
+export const LandscapeImageCard = ({ titleText, detailsText, chips, children }) => (
 
     
     <div className="flex-1 bg-white border m-6 rounded-lg shadow-lg overflow-hidden">
 
         {children}
 
-{/* 
-                <div className="hidden content-center md:flex">
-                    <div className="overflow-hidden">
-                    <img className="w-full" src={imgSrc} alt={altText} />
-                    </div>
-                </div> */}
-
-
-                <div className="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">            
-                    <div className="px-4 py-6">
-                        <div className="font-bold text-xl mb-2">{titleText}</div>
-                        <p className="text-gray-600 text-base">{detailsText}</p>
-                        <div className="flex content-start flex-wrap  bottom-0">
+{/* border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 */}
+                <div className="bg-white px-4 py-2 flex flex-col h-full">            
+                        <div className="flex content-start flex-wrap -mx-1 mt-1 mb-2 bottom-0">
                             {chips && chips.map(t => <Chip text={t} key={t} />)}                             
                         </div>
-                    </div>
+                        <div className="font-semibold text-lg">{titleText}</div>
+                        <p className="text-gray-600 text-base pb-2">{detailsText}</p>
                 </div>
         </div>
-    // </div> 
 )
 
 
@@ -100,11 +98,11 @@ export default function () {
                 /> */}
 
                 <LandscapeImageCard 
-                    titleText="ReefLifeSurvey - Species Explorer" 
+                    titleText="Reef Life Species Explorer" 
                     detailsText="Android application for browsing fish species and survey site locations based on data collected by the Australian non-profit ReefLifeSurvey"
                     chips={["Java", "Kotlin", "Android", "Material Design"]}
                 >
-                    <div className="bg-gray-700 relative" style={{ paddingBottom: '50%' }} >
+                    <div className="bg-black relative" style={{ paddingBottom: '49%' }} >
                         <img className="w-full h-full absolute object-center" 
                             src={"static/rls_landscape.png"} 
                             alt={"ReefLifeSurvey - mobile app to view high quality images of aquatic species"} />
@@ -113,8 +111,8 @@ export default function () {
 
                 <LandscapeImageCard  
                     titleText="Roast My Code" 
-                    detailsText="React web app to perform code reviews, loading data from Github via GraphQL."                    
-                    chips={["JS", "React", "GraphQL"]}
+                    detailsText="React web application to perform code reviews on Github repositories, leveraging GraphQL with TypeScript for type safety"                   
+                    chips={["TypeScript", "React", "GraphQL"]}
                 >
                     <div className="bg-gray-700 relative" style={{ paddingBottom: '49%' }} >
                         <img className="w-full h-full absolute object-cover" 
