@@ -5,7 +5,7 @@ export default function ContactForm({contactMeMessage, contactMeEmail}) {
       <div className="max-w-5xl px-6 mx-auto text-center">
 
         <h2 className="text-2xl font-semibold text-white">Contact Me</h2>
-        <p class="text-gray-400 mt-4 mb-10">{contactMeMessage}
+        <p className="text-gray-400 mt-4 mb-10">{contactMeMessage}
           <a href="mailto:jasonludden@gmail.com" className="underline hover:text-indigo-600">{contactMeEmail}</a>
         </p>
 

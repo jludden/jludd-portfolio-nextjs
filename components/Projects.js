@@ -1,23 +1,67 @@
-import { Children } from "react";
+// import rls_bg from '../public/static/rls_cardview';
 
-export const ProjectCard = ({ imgSrc, altText, titleText, detailsText, children }) => (
-    <div className="flex-grow m-6 max-w-md lg:max-w-lg rounded  shadow-lg">
 
-    <div className="flex flex-grow">
-        <div className="flex content-center">
-            <div className="overflow-hidden">
-            <img className="w-full" src={imgSrc} alt={altText} />
-            </div>
-        </div>
-
-        <div className="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">            
-            <div className="px-4 py-6">
-                <div className="font-bold text-xl mb-2">{titleText}</div>
-                <p className="text-gray-600 text-base">{detailsText}</p>
-                {children}
-            </div>
-        </div>
+export const Chip = ({ text }) => (
+    // <div className="rounded-full leading-snug p-2 m-1 bg-gray-600 text-white text-xs  items-center justify-center">{t}</div>
+    // ))}  
+     <div className="flex justify-center items-center m-1 font-medium py-1 px-2 rounded-full text-indigo-100 bg-indigo-700 border border-indigo-700 ">
+        <div className="text-xs font-normal leading-none max-w-full flex-initial">{text}</div>            
     </div>
+)
+
+export const LandscapeImageCard = ({ imgSrc, imgHeight, altText, titleText, detailsText, chips, children }) => (
+
+    
+    <div className="bg-white border m-6 rounded-lg shadow-lg overflow-hidden">
+
+        {children}
+
+{/* 
+                <div className="hidden content-center md:flex">
+                    <div className="overflow-hidden">
+                    <img className="w-full" src={imgSrc} alt={altText} />
+                    </div>
+                </div> */}
+
+
+                <div className="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">            
+                    <div className="px-4 py-6">
+                        <div className="font-bold text-xl mb-2">{titleText}</div>
+                        <p className="text-gray-600 text-base">{detailsText}</p>
+                        <div className="flex content-start flex-wrap  bottom-0">
+                            {chips && chips.map(t => <Chip text={t} key={t} />)}                             
+                        </div>
+                    </div>
+                </div>
+        </div>
+    // </div> 
+)
+
+
+
+export const PortraitImageCard = ({ imgSrc, imgHeight, altText, titleText, detailsText, chips, children }) => (    
+    <div className="flex-grow m-6 max-w-md lg:max-w-lg rounded-lg shadow-lg overflow-hidden">
+
+        <div className="flex flex-grow">
+
+                <div className="content-center md:flex">
+                    <div className="overflow-hidden">
+                    <img className="w-full" src={imgSrc} alt={altText} />
+                    </div>
+                </div>
+
+
+                <div className="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">            
+                    <div className="px-4 py-6">
+                        <div className="font-bold text-xl mb-2">{titleText}</div>
+                        <p className="text-gray-600 text-base">{detailsText}</p>
+                        {children}
+                        <div className="flex content-start flex-wrap  bottom-0">
+                            {chips && chips.map(t => <Chip text={t} key={t} />)}                             
+                        </div>
+                    </div>
+                </div>
+        </div>
     </div> 
 )
 
@@ -37,24 +81,81 @@ export default function () {
         <>
         <section>
             <div className="flex flex-col md:flex-row">
-                <ProjectCard 
-                    imgSrc="static/rls_cardview.png"
+                <PortraitImageCard 
+                    imgSrc="static/rls_portrait.png"
+                    imgHeight="36rem"
                     altText="ReefLifeSurvey card view layout"   
                     titleText="ReefLifeSurvey - Species Explorer" 
                     detailsText="Android application for browsing fish species and survey site locations based on data collected by the Australian non-profit ReefLifeSurvey"
+                    chips={["Java", "Kotlin", "Android", "Material Design"]}
                 >
+                    {/* <div className="bg-red-500" style={{ : '36rem' }} ></div> */}
+                    {/* <div className="bg-gray-700 relative" style={{ paddingBottom: '100%' }} >
+                        <img className="w-full h-full absolute object-center" 
+                            src={"static/rls_cardview.png"} 
+                            alt={"ReefLifeSurvey card view layout"} />
+                    </div> */}
+                </PortraitImageCard>
 
-                </ProjectCard>
-                <ProjectCard 
-                    imgSrc="static/rls_cardview.png"
-                    altText="ReefLifeSurvey card view layout"   
-                    titleText="ReefLifeSurvey - Species Explorer" 
-                    detailsText="Android application for browsing fish species and survey site locations based on data collected by the Australian non-profit ReefLifeSurvey"
+                <PortraitImageCard 
+                    imgSrc="static/rmc_portait.png"
+                    imgHeight="14rem"
+                    altText="Developer reviewing code"   
+                    titleText="Roast My Code" 
+                    detailsText="React web app to perform code reviews, loading data from Github via GraphQL."                    
+                    chips={["JS", "React", "GraphQL"]}
                 >
+                    {/* <div className="bg-gray-700 relative" style={{ paddingBottom: '14rem' }} >
+                        <img className="w-full h-full absolute object-center" 
+                            src={"static/rls_portait.png"} 
+                            alt={"Developer reviewing code"} />
+                    </div> */}
+                </PortraitImageCard>
 
-                </ProjectCard>
+                <LandscapeImageCard 
+                    imgSrc="static/rmc_temp.png"
+                    imgHeight="14rem"
+                    altText="Developer reviewing code"   
+                    titleText="Roast My Code" 
+                    detailsText="React web app to perform code reviews, loading data from Github via GraphQL."                    
+                    chips={["JS", "React", "GraphQL"]}
+                >
+                    <div className="bg-gray-700 relative" style={{ paddingBottom: '14rem' }} >
+                        <img className="w-full h-full absolute object-center" 
+                            src={"static/rls_landscape.png"} 
+                            alt={"Developer reviewing code"} />
+                    </div>
+                </LandscapeImageCard>
+
+                <LandscapeImageCard 
+                    imgSrc="static/rmc_temp.png"
+                    imgHeight="14rem"
+                    altText="Developer reviewing code"   
+                    titleText="Roast My Code" 
+                    detailsText="React web app to perform code reviews, loading data from Github via GraphQL."                    
+                    chips={["JS", "React", "GraphQL"]}
+                >
+                    <div className="bg-gray-700 relative" style={{ paddingBottom: '50%' }} >
+                        <img className="w-full h-full absolute object-cover" 
+                            src={"static/rmc_landscape.png"} 
+                            alt={"Developer reviewing code"} />
+                    </div>
+                </LandscapeImageCard>
             </div>
         </section>
+
+            {/* todo - try with https://github.com/cyrilwanner/next-optimized-images  */}
+        {/* <container>
+            <h2> test</h2>
+            <div className="mybackground"></div>
+            <style jsx>{`
+                .mybackground {
+                    background: url(${rls_bg})
+                }
+            `}
+
+            </style>
+        </container> */}
 
 
         <section id="Showcase" className="bg-gray-800 pattern py-20">
