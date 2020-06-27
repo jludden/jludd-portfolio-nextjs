@@ -28,3 +28,9 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
+public/static/rls_landscape_tight.png
+public/static/rls_portrait.png
+public/static/rls_square.png
+public/static/rmc_portait.png
+public/static/rmc_square.png
+public/static/rmc_temp.svg
