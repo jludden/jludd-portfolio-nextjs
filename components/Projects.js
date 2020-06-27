@@ -12,7 +12,7 @@ export const Chip = ({ text }) => (
 export const LandscapeImageCard = ({ imgSrc, imgHeight, altText, titleText, detailsText, chips, children }) => (
 
     
-    <div className="bg-white border m-6 rounded-lg shadow-lg overflow-hidden">
+    <div className="flex-1 bg-white border m-6 rounded-lg shadow-lg overflow-hidden">
 
         {children}
 
@@ -81,21 +81,14 @@ export default function () {
         <>
         <section>
             <div className="flex flex-col md:flex-row">
-                <PortraitImageCard 
+                {/* <PortraitImageCard 
                     imgSrc="static/rls_portrait.png"
                     imgHeight="36rem"
                     altText="ReefLifeSurvey card view layout"   
                     titleText="ReefLifeSurvey - Species Explorer" 
                     detailsText="Android application for browsing fish species and survey site locations based on data collected by the Australian non-profit ReefLifeSurvey"
                     chips={["Java", "Kotlin", "Android", "Material Design"]}
-                >
-                    {/* <div className="bg-red-500" style={{ : '36rem' }} ></div> */}
-                    {/* <div className="bg-gray-700 relative" style={{ paddingBottom: '100%' }} >
-                        <img className="w-full h-full absolute object-center" 
-                            src={"static/rls_cardview.png"} 
-                            alt={"ReefLifeSurvey card view layout"} />
-                    </div> */}
-                </PortraitImageCard>
+                />
 
                 <PortraitImageCard 
                     imgSrc="static/rmc_portait.png"
@@ -104,41 +97,29 @@ export default function () {
                     titleText="Roast My Code" 
                     detailsText="React web app to perform code reviews, loading data from Github via GraphQL."                    
                     chips={["JS", "React", "GraphQL"]}
-                >
-                    {/* <div className="bg-gray-700 relative" style={{ paddingBottom: '14rem' }} >
-                        <img className="w-full h-full absolute object-center" 
-                            src={"static/rls_portait.png"} 
-                            alt={"Developer reviewing code"} />
-                    </div> */}
-                </PortraitImageCard>
+                /> */}
 
                 <LandscapeImageCard 
-                    imgSrc="static/rmc_temp.png"
-                    imgHeight="14rem"
-                    altText="Developer reviewing code"   
-                    titleText="Roast My Code" 
-                    detailsText="React web app to perform code reviews, loading data from Github via GraphQL."                    
-                    chips={["JS", "React", "GraphQL"]}
+                    titleText="ReefLifeSurvey - Species Explorer" 
+                    detailsText="Android application for browsing fish species and survey site locations based on data collected by the Australian non-profit ReefLifeSurvey"
+                    chips={["Java", "Kotlin", "Android", "Material Design"]}
                 >
-                    <div className="bg-gray-700 relative" style={{ paddingBottom: '14rem' }} >
+                    <div className="bg-gray-700 relative" style={{ paddingBottom: '50%' }} >
                         <img className="w-full h-full absolute object-center" 
                             src={"static/rls_landscape.png"} 
-                            alt={"Developer reviewing code"} />
+                            alt={"ReefLifeSurvey - mobile app to view high quality images of aquatic species"} />
                     </div>
                 </LandscapeImageCard>
 
-                <LandscapeImageCard 
-                    imgSrc="static/rmc_temp.png"
-                    imgHeight="14rem"
-                    altText="Developer reviewing code"   
+                <LandscapeImageCard  
                     titleText="Roast My Code" 
                     detailsText="React web app to perform code reviews, loading data from Github via GraphQL."                    
                     chips={["JS", "React", "GraphQL"]}
                 >
-                    <div className="bg-gray-700 relative" style={{ paddingBottom: '50%' }} >
+                    <div className="bg-gray-700 relative" style={{ paddingBottom: '49%' }} >
                         <img className="w-full h-full absolute object-cover" 
                             src={"static/rmc_landscape.png"} 
-                            alt={"Developer reviewing code"} />
+                            alt={"Roast my code - code review platform with inline commenting"} />
                     </div>
                 </LandscapeImageCard>
             </div>
