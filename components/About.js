@@ -44,12 +44,29 @@ const About = ({aboutMeIntro, aboutMeMain}) =>
                 </div>
             </section>
 
-            <section className="bg-gray-800 pattern py-20">
+            <section className="bg-gray-800 pattern relative py-20">
+                {/* <div className="image-box__overlay"></div> */}
                 <div className="max-w-5xl px-6 mx-auto text-center">
                     <h2 className="text-2xl font-semibold text-white">About Me</h2>
 
-                    <p className="text-gray-400 mt-4">{aboutMeMain}</p>
+                    <div className="bg-gray-700 leading-snug rounded-md p-2 mt-2 text-center text-sm">
+                    <p className="text-gray-300 text-sm">{aboutMeMain}</p>
+                    </div>
                 </div>
+                {/* <style jsx>
+                    {`
+                        .image-box__overlay {
+                          position: absolute;
+                          top: 0;
+                          right: 0;
+                          bottom: 0;
+                          left: 0;
+                          background: rgba(0, 0, 0, 0.5);
+
+                          z-index: 2;
+                        }
+                    `}
+                </style> */}
             </section>
         </>
     );

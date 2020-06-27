@@ -1,38 +1,24 @@
-// import rls_bg from '../public/static/rls_cardview';
-
 
 export const Chip = ({ text }) => (
-    // <div className="rounded-full leading-snug p-2 m-1 bg-gray-600 text-white text-xs  items-center justify-center">{t}</div>
-    // ))}  
-     <div className="flex justify-center items-center m-1 font-medium py-1 px-2 rounded-full text-indigo-100 bg-indigo-600 border border-indigo-700 ">
+    <div className="flex justify-center items-center m-1 font-medium py-1 px-2 rounded-full text-indigo-100 bg-indigo-600 border border-indigo-700 ">
         <span className="text-xs font-semibold leading-none max-w-full flex-initial">{text}</span>            
     </div>
 )
 
-// export const Chip = ({ text }) => (
-//     // <div className="rounded-full leading-snug p-2 m-1 bg-gray-600 text-white text-xs  items-center justify-center">{t}</div>
-//     // ))}  
-//      <div className="flex justify-center items-center m-1 font-medium py-1 px-2 rounded-full text-indigo-100 bg-indigo-700 border border-indigo-700 ">
-//         <div className="text-xs uppercase leading-none tracking-wide max-w-full flex-initial">{text}</div>            
-//     </div>
-// )
-
-export const LandscapeImageCard = ({ titleText, detailsText, chips, children }) => (
-
-    
-    <div className="flex-1 bg-white border m-6 rounded-lg shadow-lg overflow-hidden">
-
+export const LandscapeImageCard = ({ titleText, detailsText, chips, link, children }) => (    
+    <a href={link}  target="_blank" className="flex-1 bg-white border m-6 rounded-lg shadow-lg overflow-hidden
+        "> 
+        {/* transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110" > */}
         {children}
-
-{/* border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 */}
-                <div className="bg-white px-4 py-2 flex flex-col h-full">            
-                        <div className="flex content-start flex-wrap -mx-1 mt-1 mb-2 bottom-0">
-                            {chips && chips.map(t => <Chip text={t} key={t} />)}                             
-                        </div>
-                        <div className="font-semibold text-lg">{titleText}</div>
-                        <p className="text-gray-600 text-base pb-2">{detailsText}</p>
-                </div>
+        {/* border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 */}
+        <div className="bg-white px-4 py-2 flex flex-col h-full">            
+            <div className="flex content-start flex-wrap -mx-1 mt-1 mb-2 bottom-0">
+                {chips && chips.map(t => <Chip text={t} key={t} />)}                             
+            </div>
+            <div className="font-semibold text-lg">{titleText}</div>
+            <p className="text-gray-600 text-base pb-2">{detailsText}</p>
         </div>
+    </a>
 )
 
 
@@ -78,6 +64,7 @@ export default function () {
     return (
         <>
         <section>
+            <h2 className="text-2xl pt-10 font-semibold text-gray-800 text-center">Selected Projects</h2>
             <div className="flex flex-col md:flex-row">
                 {/* <PortraitImageCard 
                     imgSrc="static/rls_portrait.png"
@@ -100,6 +87,7 @@ export default function () {
                 <LandscapeImageCard 
                     titleText="Reef Life Species Explorer" 
                     detailsText="Android application for browsing fish species and survey site locations based on data collected by the Australian non-profit ReefLifeSurvey"
+                    link="https://github.com/jludden/ReefLifeSurvey---Species-Explorer#reeflifesurvey---species-explorer"
                     chips={["Java", "Kotlin", "Android", "Material Design"]}
                 >
                     <div className="bg-black relative" style={{ paddingBottom: '49%' }} >
@@ -112,6 +100,7 @@ export default function () {
                 <LandscapeImageCard  
                     titleText="Roast My Code" 
                     detailsText="React web application to perform code reviews on Github repositories, leveraging GraphQL with TypeScript for type safety"                   
+                    link="https://github.com/jludden/react-ts-tdd#roast-my-code"
                     chips={["TypeScript", "React", "GraphQL"]}
                 >
                     <div className="bg-gray-700 relative" style={{ paddingBottom: '49%' }} >
@@ -137,7 +126,7 @@ export default function () {
         </container> */}
 
 
-        <section id="Showcase" className="bg-gray-800 pattern py-20">
+        {/* <section id="Showcase" className="bg-gray-800 pattern py-20">
             <div className="max-w-5xl px-6 mx-auto text-center">
                 <h2 className="text-2xl font-semibold text-white">Selected Projects</h2>
 
@@ -197,7 +186,7 @@ export default function () {
                     </a>
                 </div>
             </div>
-        </section>
+        </section> */}
         </>
     );
 }
