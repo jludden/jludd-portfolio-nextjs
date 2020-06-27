@@ -55,21 +55,12 @@ export const PortraitImageCard = ({ imgSrc, imgHeight, altText, titleText, detai
     </div> 
 )
 
-export const ProjectCard1 = ({ imgSrc, altText, titleText, detailsText, children }) => (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg">
-        <img className="w-full" src={imgSrc} alt={altText} />
-        <div className="px-4 py-6">
-            <div className="font-bold text-xl mb-2">{titleText}</div>
-            <p className="text-gray-600 text-base">{detailsText}</p>
-            {children}
-        </div>
-    </div>
-)
+
 
 export default function () {
     return (
         <>
-        <section className="bg-gray-200">
+        <section id="Showcase" className="bg-gray-200">
             <h2 className="text-2xl pt-10 font-semibold text-gray-800 text-center">Selected Projects</h2>
             <div className="flex flex-col md:flex-row">
                 {/* <PortraitImageCard 
