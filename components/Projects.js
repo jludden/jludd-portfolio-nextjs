@@ -83,7 +83,7 @@ export default function () {
 
                 <LandscapeImageCard 
                     titleText="Reef Life Species Explorer" 
-                    detailsText="Android application for browsing fish species and survey site locations based on data collected by the Australian non-profit ReefLifeSurvey"
+                    detailsText="Android application for browsing fish species and survey site locations based on data collected by the Australian non-profit ReefLifeSurvey."
                     link="https://github.com/jludden/ReefLifeSurvey---Species-Explorer#reeflifesurvey---species-explorer"
                     chips={["Java", "Kotlin", "Android"]}
                 >
@@ -96,7 +96,7 @@ export default function () {
 
                 <LandscapeImageCard  
                     titleText="Roast My Code" 
-                    detailsText="React web application to perform code reviews on Github repositories, leveraging GraphQL with TypeScript for type safety"                   
+                    detailsText="React web application to perform code reviews on Github repositories, leveraging GraphQL with TypeScript for type safety."                   
                     link="https://github.com/jludden/react-ts-tdd#roast-my-code"
                     chips={["TypeScript", "GraphQL", "React" ]}
                 >

@@ -49,8 +49,8 @@ const About = ({aboutMeIntro, aboutMeMain}) =>
                 <div className="max-w-5xl px-6 mx-auto text-center">
                     <h2 className="text-2xl font-semibold text-white">About Me</h2>
 
-                    <div className="bg-gray-700 leading-snug rounded-md p-2 mt-2 text-center text-sm">
-                    <p className="text-gray-300 text-sm">{aboutMeMain}</p>
+                    <div className="bg-gray-100 leading-snug rounded-md p-2 mt-2 text-center text-sm">
+                    <p className="text-gray-600 text-base">{aboutMeMain}</p>
                     </div>
                 </div>
                 {/* <style jsx>
