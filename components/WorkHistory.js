@@ -12,22 +12,37 @@
 //         </div>
 //     )
 // }
+export const TimelineCard = ({ img, altText, title, date, externalLink, children }) => (
+   
+    <div className="rounded overflow-hidden shadow-lg bg-gray-100 w-72 md:w-96" >
+        <div className="relative" style={{ paddingBottom: '30%' }} >
+            <img className="w-full h-full absolute object-center rounded-lg shadow-md" 
+                src={img} 
+                alt={altText} />
+        </div>
+        <div className="px-4 py-6 bg-gray-200">
+            <div className="font-bold text-xl mb-2">{title}</div>
+            <p className="text-gray-600 text-base">{date}</p>
+            {children}
+        </div>
+    </div>
+    
+)
 
-export const TimelineItem = ({ position, title, date }) => (
+export const TimelineItem = ({ img, altText, externalLink, position, title, date }) => (
     <div className="w-full h-64 my-12">
-        <div className="timeline-img left-auto md:left-1/2" />
-        <div className={position}>
-            <ProjectCard1 title={title} date={date}
-            altText="hi"
-            imgSrc="static/rmc_temp.svg"
+        <div className="timeline-icon left-auto lg:left-1/2 transition duration-500 ease-in-out transform hover:scale-110" />
+        <div className={`float-left lg:${position}`}>
+            <TimelineCard title={title} date={date} externalLink={externalLink}
+                altText={altText} img={img}
             >
 
-            </ProjectCard1>
+            </TimelineCard>
 
         </div>
         <style jsx>
             {`
-             .timeline-img {
+             .timeline-icon {
                 width: 30px;
                 height: 30px;
                 background: #3F51B5;
@@ -41,29 +56,13 @@ export const TimelineItem = ({ position, title, date }) => (
     </div>
 )
 
-
-export const ProjectCard1 = ({ imgSrc, altText, title, date, children }) => (
-   
-    <div className="max-w-sm rounded overflow-hidden shadow-lg">
-        <img className="w-full bg-gray-200" src={imgSrc} alt={altText} />
-        <div className="px-4 py-6 bg-gray-200">
-            <div className="font-bold text-xl mb-2">{title}</div>
-            <p className="text-gray-600 text-base">{date}</p>
-            {children}
-        </div>
-    </div>
-    
-)
-
 export const Timeline = ({ items }) => {
     return (
         <div className="timeline relative w-full">
-            <div className="timeline-line left-auto md:left-1/2" />
+            <div className="timeline-line left-auto lg:left-1/2" />
             {items.map((item, index) => <TimelineItem {...item} key={item.title}  
                 position={index % 2 == 0 ? "float-left" : "float-right" } />)}
 
-
-{/*                     .timeline ::before {                         */}
             <style jsx>
                 {`
                     .timeline-line {                        
@@ -73,8 +72,7 @@ export const Timeline = ({ items }) => {
                         height: 95%;
                         position: absolute;
                         transform: translateX(-50%);                        
-                    }
-                    
+                    }                   
                    
                 `}
             </style>
@@ -87,20 +85,25 @@ export default function WorkHistory() {
 
     const items = [
         {
-            title: "Birth",
-            date: "Oct 1992"
-        },
-        {
             title: "Graduated from Western Kentucky University",
-            date: "May 2012"
+            date: "May 2012",
+            img: "static/WKU_logo.png",
+            altText:"Logo for Western Kentucky University",
+            externalLink: "https://www.wku.edu/"
         },
         {
             title: "Software Developer - Epic",
-            date: "July 2012 - July 2015"
+            date: "July 2012 - July 2015",
+            img: "static/Epic_logo.png",
+            altText: "Logo for Epic Health Systems",
+            externalLink: "https://www.epic.com/software#PatientEngagement"
         },
         {
             title: "Senior Software Developer - EPAM",
-            date: "Sep 2018 - current"
+            date: "Sep 2018 - current",
+            img: "static/EPAM_logo.png",
+            altText: "Logo for EPAM",
+            externalLink: "https://www.epam.com/about/fact-sheet"
         },
     ];
 
