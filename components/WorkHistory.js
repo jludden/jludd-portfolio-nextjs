@@ -14,13 +14,31 @@
 // }
 
 export const TimelineItem = ({ position, title, date }) => (
-    <div className="w-full h-64  my-12">
-    <div className={position}><ProjectCard1 title={title} date={date}
-        altText="hi"
-        imgSrc="static/rmc_temp.svg"
-        ></ProjectCard1>
+    <div className="w-full h-64 my-12">
+        <div className="timeline-img left-auto md:left-1/2" />
+        <div className={position}>
+            <ProjectCard1 title={title} date={date}
+            altText="hi"
+            imgSrc="static/rmc_temp.svg"
+            >
 
-</div></div>
+            </ProjectCard1>
+
+        </div>
+        <style jsx>
+            {`
+             .timeline-img {
+                width: 30px;
+                height: 30px;
+                background: #3F51B5;
+                border-radius: 50%;
+                position: absolute;
+                margin-top: 25px;
+                margin-left: -15px;
+            }
+            `}
+        </style>
+    </div>
 )
 
 
@@ -55,6 +73,8 @@ export const Timeline = ({ items }) => {
                         transform: translateX(-50%);
                         
                     }
+                    
+                   
                 `}
             </style>
         </div>
