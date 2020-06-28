@@ -58,20 +58,21 @@ export const ProjectCard1 = ({ imgSrc, altText, title, date, children }) => (
 export const Timeline = ({ items }) => {
     return (
         <div className="timeline relative w-full">
+            <div className="timeline-line left-auto md:left-1/2" />
             {items.map((item, index) => <TimelineItem {...item} key={item.title}  
                 position={index % 2 == 0 ? "float-left" : "float-right" } />)}
+
+
+{/*                     .timeline ::before {                         */}
             <style jsx>
                 {`
-                    .timeline ::before {
-                        
+                    .timeline-line {                        
                         content: '';
                         background: #5a67d8;
                         width: 5px;
                         height: 95%;
                         position: absolute;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        
+                        transform: translateX(-50%);                        
                     }
                     
                    
