@@ -12,45 +12,80 @@
 //         </div>
 //     )
 // }
-export const TimelineCard = ({ img, altText, title, date, externalLink, children }) => (
-   
-    <div className="rounded overflow-hidden shadow-lg bg-gray-100 w-72 md:w-96" >
-        <div className="relative" style={{ paddingBottom: '30%' }} >
-            <img className="w-full h-full absolute object-center rounded-lg shadow-md" 
-                src={img} 
-                alt={altText} />
-        </div>
-        <div className="px-4 py-6 bg-gray-200">
-            <div className="font-bold text-xl mb-2">{title}</div>
-            <p className="text-gray-600 text-base">{date}</p>
-            {children}
-        </div>
-    </div>
-    
-)
 
-export const TimelineItem = ({ img, altText, externalLink, position, title, date }) => (
-    <div className="w-full h-64 my-12">
+import { Chip } from './Projects';
+
+export const TimelineCard = (props) => {
+    const { img, altText, title, startDate, endDate, details, chips, externalLink, children } = props;
+   
+    return (
+        <div className="rounded overflow-hidden w-72 md:w-96 ml-8 lg:ml-0" >
+            {children}
+            <div className="relative bg-gray-100" style={{ paddingBottom: '30%' }} >
+                <img className="w-full h-full absolute object-center rounded-lg shadow-md" 
+                    src={img} 
+                    alt={altText} />
+            </div>
+            
+            <div className="-mt-3 relative">
+                <div className="bg-lightAccent relative rounded-lg shadow-xl">
+                    <span className="bg-darkAccent text-white shadow-sm font-medium py-1 px-2 rounded-full justify-center items-center">
+                        {startDate}
+                    </span>
+                    <span className="ml-6 bg-darkAccent text-white shadow-sm font-medium py-1 px-2 rounded-full justify-center items-center">
+                        {endDate}
+                    </span>
+                </div>
+                 <a href={"google.com"}  target="_blank" 
+                        className="bg-gray-100 px-4 py-2 flex flex-col h-full rounded-lg shadow-lg
+                    ">                     
+                    <div className="">
+                        <div className="font-semibold text-lg">{title}</div>
+                        <p className="text-gray-600 text-base">{details}</p>
+                    </div>
+                    <div className="flex content-start flex-wrap mt-1 bottom-0">
+                        {chips && chips.map(t => <Chip text={t} key={t} />)}                             
+                    </div>
+                </a>
+            </div>
+            
+        </div>
+    );
+}
+
+export const TimelineItem = ({ position, ...item }) => (
+    <div className="w-full h-84 my-12">
         <div className="timeline-icon left-auto lg:left-1/2 transition duration-500 ease-in-out transform hover:scale-110" />
         <div className={`float-left lg:${position}`}>
-            <TimelineCard title={title} date={date} externalLink={externalLink}
-                altText={altText} img={img}
+            <TimelineCard {...item}
             >
+                <div className="timeline-arrow left-auto lg:left-1/2 " />
 
             </TimelineCard>
 
         </div>
         <style jsx>
             {`
-             .timeline-icon {
-                width: 30px;
-                height: 30px;
-                background: #3F51B5;
-                border-radius: 50%;
-                position: absolute;
-                margin-top: 25px;
-                margin-left: -15px;
-            }
+                .timeline-icon {
+                    width: 30px;
+                    height: 30px;
+                    background: #5A67D8;
+                    border-radius: 50%;
+                    position: absolute;
+                    margin-top: 25px;
+                    margin-left: -15px;
+                }
+                .timeline-arrow {
+                    content: '';
+                    position: absolute;
+                    border-style: solid;
+                    width: 0;
+                    height: 0;
+                    margin-top: 30px;
+                    margin-left: -15px;
+                    border-width: 10px 15px 10px 0;
+                    border-color: transparent #f5f5f5 transparent transparent;
+                }
             `}
         </style>
     </div>
@@ -67,7 +102,7 @@ export const Timeline = ({ items }) => {
                 {`
                     .timeline-line {                        
                         content: '';
-                        background: #5a67d8;
+                        background: #C5CAE9;
                         width: 5px;
                         height: 95%;
                         position: absolute;
@@ -85,25 +120,49 @@ export default function WorkHistory() {
 
     const items = [
         {
-            title: "Graduated from Western Kentucky University",
-            date: "May 2012",
+            title: "Computer Science Major",
+            startDate: "Sep 2010",
+            endDate: "May 2012",
             img: "static/WKU_logo.png",
             altText:"Logo for Western Kentucky University",
-            externalLink: "https://www.wku.edu/"
+            externalLink: "https://www.wku.edu/",
+            details: "B.S., Computer Science, minor in Mathematics, with honors",
         },
         {
-            title: "Software Developer - Epic",
-            date: "July 2012 - July 2015",
+            title: "Software Developer",
+            startDate: "July 2012",
+            endDate: "July 2015",
             img: "static/Epic_logo.png",
             altText: "Logo for Epic Health Systems",
-            externalLink: "https://www.epic.com/software#PatientEngagement"
+            externalLink: "https://www.epic.com/about",
+            details: 'Developed clinical and patient engagement software for healthcare organizations serving over 250 million patients globally.', 
+            chips: ["C#", "Java", "TypeScript", "SQL", "InterSystems Caché"],
+            companyTagline: "Software Vendor for Healthcare Organizations Serving 250 Million Patients Globally.",
+            detailsExtended: `Coordinated with leading endocrinologists at the Stanford Children’s Hospital and the Park Nicollet International Diabetes Center on user stories and UX design to allow doctors to create insulin dosing regimens for diabetic patients in Epic (TypeScript, C#, .NET MVVM, SQL)
+            Rigorously tracked development progress in a Gantt chart, and led daily stand-ups to meet strict timelines until the product was feature-complete
+            Brought endocrinologists onto an advisory panel to continue to give feedback throughout the development and implementation process
+            Contributed to the Epic MyChart mobile application, a top featured medical application on the iOS App Store and Android Google Play Store, including prototyping integration with Amazon Alexa and Google Assistant APIs via OAuth 2.0 (Java)
+            Analyzed performance of a long-running batch job processing hundreds of thousands of patient billing records each night; optimization of disk reads and caching as well as an adaptive multi-threaded solution shaved hours off the run time at large hospitals (Caché, Epic Chronicles DB)
+            `,
         },
         {
-            title: "Senior Software Developer - EPAM",
-            date: "Sep 2018 - current",
+            title: "Senior Software Developer",
+            startDate: "Sep 2018",
+            endDate: "current",
             img: "static/EPAM_logo.png",
             altText: "Logo for EPAM",
-            externalLink: "https://www.epam.com/about/fact-sheet"
+            externalLink: "https://www.epam.com/about/fact-sheet",
+            companyTagline: "International Consulting Firm for Fortune 1000",
+            chips: ["ReactJs", "C# .Net Core", "MongoDb", "Java", "Oracle"],
+            details:'Consulted for large international investment bank, developing applications for middle office and fund management integrations.',
+            detailsExtended: `Contributed to a structured funds platform with heavy microservices and email integrations (Java, Play Framework, Oracle DB, React)
+            Designed a greenfield web application to automate a previously manual workflow for processing corporate action events for a global investment bank (C#, .NET Core, React, Redux, JavaScript, mongoDB)
+            Following an agile workflow, the initial proof of concept was demoed after the first two-week sprint
+            Continued to integrate user feedback in an agile setting until shipping the full featured web application to the bank’s production system 
+            Set up continuous integration and delivery via Bitbucket and TeamCity, ElasticSearch logging, and Nginx OpenResty for reverse proxy authentication
+            Conducted technical coding interviews for applicants resulting in the hiring of 2 new members for the engineering team
+            Mentored junior developers on Test Driven Development best practices for .NET Core and React, and presented lessons learned in a department brown bag meeting            
+            `
         },
     ];
 

@@ -6,6 +6,12 @@ module.exports = {
         '72': '18rem',
         '84': '21rem',
         '96': '24rem',
+        '128': '32rem',
+      },
+      colors: {
+        main: '#5A67D8',
+        lightAccent: '#C5CAE9',
+        darkAccent: '#8B82CB'
       }
     },
     inset: {
