@@ -21,6 +21,47 @@ export const TimelineCard = (props) => {
     return (
         <div className="rounded overflow-hidden w-72 md:w-96 ml-8 lg:ml-0" >
             {children}
+            
+            <div className="flex h-16 bg-darkAccent justify-end ">
+                <div className="w-3/4 flex-col flex-wrap">
+                    <div className="flex-shrink text-white text-l md:text-xl font-medium py-1 pt-2 rounded-full justify-center items-center">
+                        {title}
+                    </div>
+                   
+                </div> 
+                <div className="w-1/4 relative" style={{ paddingBottom: '10%' }} >
+                    <img className="absolute right-0 object-center rounded-lg p-1 bg-gray-100 m-1" 
+                        src={img} 
+                        alt={altText} />
+                </div>
+            </div>
+            
+                
+            <div className="-mt-3 relative">
+                 <a href={externalLink}  target="_blank" 
+                        className="bg-gray-100 px-4 py-2 flex flex-col h-full rounded-br-lg
+                            rounded-bl-lg shadow-lg">                     
+                    <div className="">
+                        <div className="font-semibold text-lg">{startDate} to {endDate}</div>
+                        <p className="text-gray-600 text-base">{details}</p>
+                    </div>
+                    <div className="flex content-start flex-wrap mt-1 bottom-0">
+                        {chips && chips.map(t => <Chip text={t} key={t} />)}                             
+                    </div>
+                </a>
+            </div>
+            
+        </div>
+    );
+}
+
+export const TimelineCard1 = (props) => {
+    const { img, altText, title, startDate, endDate, details, chips, externalLink, children } = props;
+   
+    return (
+        <div className="rounded overflow-hidden w-72 md:w-96 ml-8 lg:ml-0" >
+            {children}
+
             <div className="relative bg-gray-100" style={{ paddingBottom: '30%' }} >
                 <img className="w-full h-full absolute object-center rounded-lg shadow-md" 
                     src={img} 
@@ -59,7 +100,7 @@ export const TimelineItem = ({ position, ...item }) => (
         <div className={`float-left lg:${position}`}>
             <TimelineCard {...item}
             >
-                <div className="timeline-arrow left-auto lg:left-1/2 " />
+                {/* <div className="timeline-arrow left-auto lg:left-1/2 " /> */}
 
             </TimelineCard>
 
@@ -102,7 +143,7 @@ export const Timeline = ({ items }) => {
                 {`
                     .timeline-line {                        
                         content: '';
-                        background: #C5CAE9;
+                        background: #8B82CB;
                         width: 5px;
                         height: 95%;
                         position: absolute;
@@ -123,10 +164,10 @@ export default function WorkHistory() {
             title: "Computer Science Major",
             startDate: "Sep 2010",
             endDate: "May 2012",
-            img: "static/WKU_logo.png",
+            img: "static/WKU_logo.jpg",
             altText:"Logo for Western Kentucky University",
             externalLink: "https://www.wku.edu/",
-            details: "B.S., Computer Science, minor in Mathematics, with honors",
+            details: "B.S., Computer Science, minor in Mathematics, with honors.",
         },
         {
             title: "Software Developer",
@@ -148,13 +189,13 @@ export default function WorkHistory() {
         {
             title: "Senior Software Developer",
             startDate: "Sep 2018",
-            endDate: "current",
+            endDate: "Present",
             img: "static/EPAM_logo.png",
             altText: "Logo for EPAM",
             externalLink: "https://www.epam.com/about/fact-sheet",
             companyTagline: "International Consulting Firm for Fortune 1000",
             chips: ["ReactJs", "C# .Net Core", "MongoDb", "Java", "Oracle"],
-            details:'Consulted for large international investment bank, developing applications for middle office and fund management integrations.',
+            details:'Consulted for a large international investment bank, developing applications for middle office and fund management integrations.',
             detailsExtended: `Contributed to a structured funds platform with heavy microservices and email integrations (Java, Play Framework, Oracle DB, React)
             Designed a greenfield web application to automate a previously manual workflow for processing corporate action events for a global investment bank (C#, .NET Core, React, Redux, JavaScript, mongoDB)
             Following an agile workflow, the initial proof of concept was demoed after the first two-week sprint

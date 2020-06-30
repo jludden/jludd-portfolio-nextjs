@@ -1,4 +1,19 @@
-export default function ContactForm({contactMeMessage, contactMeEmail}) {
+export default function ContactForm({ contactMeMessage, contactMeEmail }){
+  return (
+  <section id="Contact" className="bg-gray-200 py-20">
+
+  <div className="max-w-5xl px-6 mx-auto text-center">
+
+    <h2 className="text-2xl font-semibold text-gray-700 mt-20">Contact Me</h2>
+    <p className="text-gray-600 mt-4 mb-10">{`More coming soon! To get in touch please shoot me an email at `}
+      <a href="mailto:jasonludden@gmail.com" className="underline hover:text-indigo-600">{contactMeEmail}</a>
+    </p>
+  </div>
+  </section>
+  )
+}
+
+function ContactForm1({ contactMeMessage, contactMeEmail }) {
   return (
     <section id="Contact" className="bg-gray-800 pattern py-20 mt-20">
 
