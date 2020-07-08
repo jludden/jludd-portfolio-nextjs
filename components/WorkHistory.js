@@ -98,7 +98,7 @@ export const TimelineCard1 = (props) => {
 export const TimelineItem = ({ position, ...item }) => (
     <div className="w-full h-84 my-12">
         <div className="timeline-icon left-auto lg:left-1/2 transition duration-500 ease-in-out transform hover:scale-110" />
-        <div className={`sm:float-left md:float-left lg:${position} relative`}>
+        <div className={`relative float-left ${position === "float-left" ? "lg:float-left" : "lg:float-right"}`}>
             <TimelineCard {...item}
             >
                 <div className={position === "float-left" ? "timeline-arrow-right" : "timeline-arrow-left"} />
