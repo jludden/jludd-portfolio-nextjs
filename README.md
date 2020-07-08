@@ -1,19 +1,21 @@
 # Jason's Portfolio
 
-todo - netlify badge
+## [jasonludden.dev](http://jasonludden.dev)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Netlify Status](https://api.netlify.com/api/v1/badges/ab4e4c0f-18ea-44b5-89cc-5b1c49d9759b/deploy-status)](https://app.netlify.com/sites/xenodochial-edison-1711d3/deploys)
+
+
+
+<img src="screenshots/portfolio_main.png" width="60%" hspace="20">
+<img src="screenshots/portfolio_cards.gif" width="60%" hspace="20">
+
+
+
 
 Built with [Next.js](https://nextjs.org/) 
 
 
-ideas:
-
-domain:
-jason-ludd.en
-jasonludden.dev
-jludden.dev
-jludden.me
-jasons.site
-
+done...
 pages: landing - showcase, projects, about page, contact page
 
 one page - scrollspy
@@ -24,6 +26,8 @@ contact
 
 links: resume, github, linkedin
 
+
+todo...
 links to open in new tab:
     project cards - add external link option or allow user to choose
 

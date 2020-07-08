@@ -9,7 +9,9 @@
     "export": "next export"
   },
   "dependencies": {
+    "imagemin-optipng": "^8.0.0",
     "next": "9.4.4",
+    "next-optimized-images": "^2.6.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-scrollspy": "^3.4.2"

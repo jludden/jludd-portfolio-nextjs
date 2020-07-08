@@ -29,11 +29,12 @@ export const TimelineCard = (props) => {
                     </div>
                    
                 </div> 
-                <div className="w-1/4 relative" style={{ paddingBottom: '10%' }} >
-                    <img className="absolute right-0 object-center rounded-lg p-1 bg-gray-100 m-1" 
+                <a className="w-1/4 relative" style={{ paddingBottom: '10%' }} href={externalLink} >
+                    <img className="absolute right-0 object-center rounded-lg p-1 bg-gray-100 m-1
+                                    transition duration-500 ease-in-out transform hover:scale-110" 
                         src={img} 
                         alt={altText} />
-                </div>
+                </a>
             </div>
             
                 
@@ -49,8 +50,8 @@ export const TimelineCard = (props) => {
                         {chips && chips.map(t => <Chip text={t} key={t} />)}                             
                     </div>
                 </a>
-            </div>
-            
+            </div>            
+
         </div>
     );
 }
@@ -97,10 +98,10 @@ export const TimelineCard1 = (props) => {
 export const TimelineItem = ({ position, ...item }) => (
     <div className="w-full h-84 my-12">
         <div className="timeline-icon left-auto lg:left-1/2 transition duration-500 ease-in-out transform hover:scale-110" />
-        <div className={`float-left lg:${position}`}>
+        <div className={`sm:float-left md:float-left lg:${position} relative`}>
             <TimelineCard {...item}
             >
-                {/* <div className="timeline-arrow left-auto lg:left-1/2 " /> */}
+                <div className={position === "float-left" ? "timeline-arrow-right" : "timeline-arrow-left"} />
 
             </TimelineCard>
 
@@ -116,16 +117,42 @@ export const TimelineItem = ({ position, ...item }) => (
                     margin-top: 25px;
                     margin-left: -15px;
                 }
-                .timeline-arrow {
+                .timeline-arrow-left {
                     content: '';
                     position: absolute;
                     border-style: solid;
                     width: 0;
                     height: 0;
+                    left: auto;
                     margin-top: 30px;
                     margin-left: -15px;
                     border-width: 10px 15px 10px 0;
-                    border-color: transparent #f5f5f5 transparent transparent;
+                    border-color: transparent #8B82CB transparent transparent;
+                }
+                .timeline-arrow-right {
+                    content: '';
+                    position: absolute;
+                    border-style: solid;
+                    width: 0;
+                    height: 0;
+                    left: auto;
+                    margin-top: 30px;
+                    margin-left: -15px;
+                    border-width: 10px 15px 10px 0;
+                    border-color: transparent #8B82CB transparent transparent;
+                }
+                @media (min-width: 1024px) {
+                    .timeline-arrow-right {
+                        content: '';
+                        position: absolute;
+                        border-style: solid;
+                        width: 0;
+                        height: 0;
+                        margin-top: 30px;
+                        right: -15px;
+                        border-width: 10px 0 10px 15px;
+                        border-color: transparent transparent transparent #8B82CB;
+                    } 
                 }
             `}
         </style>
