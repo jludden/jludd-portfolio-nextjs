@@ -99,7 +99,7 @@ export default function () {
                 >
                     <div className="relative" style={{ paddingBottom: '49%' }} >
                         <img className="w-full h-full absolute object-cover rounded-lg shadow-md" 
-                            src={"static/rmc_landscape.png"} 
+                            src={require("../public/static/rmc_landscape.png")} 
                             alt={"Roast my code - code review platform with inline commenting"} />
                     </div>
                 </LandscapeImageCard>
