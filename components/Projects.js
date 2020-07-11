@@ -86,7 +86,7 @@ export default function () {
                 >
                     <div className="relative" style={{ paddingBottom: '49%' }} >
                         <img className="w-full h-full absolute object-center rounded-lg shadow-md" 
-                            src={"static/rls_landscape.png"} 
+                            src={require("../public/static/rls_landscape.png")} 
                             alt={"ReefLifeSurvey - mobile app to view high quality images of aquatic species"} />
                     </div>
                 </LandscapeImageCard>
