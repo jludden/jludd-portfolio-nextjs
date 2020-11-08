@@ -188,13 +188,33 @@ export default function WorkHistory() {
 
     const items = [
         {
-            title: "Computer Science Major",
-            startDate: "Sep 2010",
-            endDate: "May 2012",
-            img: "static/WKU_logo.jpg",
-            altText:"Logo for Western Kentucky University",
-            externalLink: "https://www.wku.edu/",
-            details: "B.S., Computer Science, minor in Mathematics, with honors.",
+            title: "Software Engineer",
+            startDate: "Sep 2020",
+            endDate: "Present",
+            img: "static/Olo_logo.png",
+            altText:"Logo for Olo Online Ordering",
+            externalLink: "https://www.olo.com/",
+            details: "Contributed to platform responsible for handling millions of online orders per day. Implemented 3ds functionality using iFrames to limit PCI scope.",
+            chips: ["C#", "F#", "AWS", "Docker", "Kafka"],
+        },
+        {
+            title: "Senior Software Developer",
+            startDate: "Sep 2018",
+            endDate: "Sep 2020",
+            img: "static/EPAM_logo.png",
+            altText: "Logo for EPAM",
+            externalLink: "https://www.epam.com/about/fact-sheet",
+            companyTagline: "International Consulting Firm for Fortune 1000",
+            chips: ["ReactJs", "C# .Net Core", "MongoDb", "Java", "Oracle"],
+            details:'Consulted for a large international investment bank, developing applications for middle office and fund management integrations.',
+            detailsExtended: `Contributed to a structured funds platform with heavy microservices and email integrations (Java, Play Framework, Oracle DB, React)
+            Designed a greenfield web application to automate a previously manual workflow for processing corporate action events for a global investment bank (C#, .NET Core, React, Redux, JavaScript, mongoDB)
+            Following an agile workflow, the initial proof of concept was demoed after the first two-week sprint
+            Continued to integrate user feedback in an agile setting until shipping the full featured web application to the bank’s production system 
+            Set up continuous integration and delivery via Bitbucket and TeamCity, ElasticSearch logging, and Nginx OpenResty for reverse proxy authentication
+            Conducted technical coding interviews for applicants resulting in the hiring of 2 new members for the engineering team
+            Mentored junior developers on Test Driven Development best practices for .NET Core and React, and presented lessons learned in a department brown bag meeting            
+            `
         },
         {
             title: "Software Developer",
@@ -214,23 +234,13 @@ export default function WorkHistory() {
             `,
         },
         {
-            title: "Senior Software Developer",
-            startDate: "Sep 2018",
-            endDate: "Present",
-            img: "static/EPAM_logo.png",
-            altText: "Logo for EPAM",
-            externalLink: "https://www.epam.com/about/fact-sheet",
-            companyTagline: "International Consulting Firm for Fortune 1000",
-            chips: ["ReactJs", "C# .Net Core", "MongoDb", "Java", "Oracle"],
-            details:'Consulted for a large international investment bank, developing applications for middle office and fund management integrations.',
-            detailsExtended: `Contributed to a structured funds platform with heavy microservices and email integrations (Java, Play Framework, Oracle DB, React)
-            Designed a greenfield web application to automate a previously manual workflow for processing corporate action events for a global investment bank (C#, .NET Core, React, Redux, JavaScript, mongoDB)
-            Following an agile workflow, the initial proof of concept was demoed after the first two-week sprint
-            Continued to integrate user feedback in an agile setting until shipping the full featured web application to the bank’s production system 
-            Set up continuous integration and delivery via Bitbucket and TeamCity, ElasticSearch logging, and Nginx OpenResty for reverse proxy authentication
-            Conducted technical coding interviews for applicants resulting in the hiring of 2 new members for the engineering team
-            Mentored junior developers on Test Driven Development best practices for .NET Core and React, and presented lessons learned in a department brown bag meeting            
-            `
+            title: "Computer Science Major",
+            startDate: "Sep 2010",
+            endDate: "May 2012",
+            img: "static/WKU_logo.jpg",
+            altText:"Logo for Western Kentucky University",
+            externalLink: "https://www.wku.edu/",
+            details: "B.S., Computer Science, minor in Mathematics, with honors.",
         },
     ];
 

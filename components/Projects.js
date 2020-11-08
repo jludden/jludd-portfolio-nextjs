@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 
 export const Chip = ({ text }) => (
     <div className="flex justify-center items-center m-1 font-medium py-1 px-2 rounded-full text-indigo-100 shadow-sm bg-indigo-600 border border-indigo-700 ">
@@ -55,6 +56,16 @@ export const PortraitImageCard = ({ imgSrc, imgHeight, altText, titleText, detai
 
 
 export default function () {
+    const [imageLoaded, setImageLoaded] = useState(false);
+    const styles = {
+        lqip: {
+          filter: "blur(10px)",
+        },
+      };
+      // Hide preview when image has loaded.
+  if (imageLoaded) {
+    styles.lqip.opacity = 0;
+  }
     return (
         <>
         <section id="Showcase" className="bg-gray-200">
@@ -85,9 +96,18 @@ export default function () {
                     chips={["Java", "Kotlin", "Android"]}
                 >
                     <div className="relative" style={{ paddingBottom: '49%' }} >
+                         <img className="w-full h-full absolute object-center rounded-lg shadow-md
+                          transition-opacity duration-500 ease-in opacity-100" 
+                            src={require("../content/assets/rls_landscape.png?lqip")} 
+                            alt={"ReefLifeSurvey - mobile app to view high quality images of aquatic species"} 
+                            style={styles.lqip}
+
+                            />
                         <img className="w-full h-full absolute object-center rounded-lg shadow-md" 
-                            src={require("../public/static/rls_landscape.png")} 
-                            alt={"ReefLifeSurvey - mobile app to view high quality images of aquatic species"} />
+                            src={require("../content/assets/rls_landscape.png")} 
+                            alt={"ReefLifeSurvey - mobile app to view high quality images of aquatic species"} 
+                            onLoad={() => setImageLoaded(true)}
+                            />
                     </div>
                 </LandscapeImageCard>
 
@@ -95,11 +115,11 @@ export default function () {
                     titleText="Roast My Code" 
                     detailsText="React web application to perform code reviews on Github repositories, leveraging GraphQL with TypeScript for type safety."                   
                     link="https://github.com/jludden/react-ts-tdd#roast-my-code"
-                    chips={["TypeScript", "GraphQL", "React" ]}
+                    chips={["TypeScript", "GraphQL", "React", "Firebase" ]}
                 >
                     <div className="relative" style={{ paddingBottom: '49%' }} >
                         <img className="w-full h-full absolute object-cover rounded-lg shadow-md" 
-                            src={require("../public/static/rmc_landscape.png")} 
+                            src={require("../content/assets/rmc_landscape.png")} 
                             alt={"Roast my code - code review platform with inline commenting"} />
                     </div>
                 </LandscapeImageCard>
