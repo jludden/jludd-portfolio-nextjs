@@ -46,5 +46,7 @@ C5CAE9
 2D3748
 
 
+Thanks of course to https://tailwindcomponents.com/u/khatabwedaa 
+
 Thanks to Sava Lazic
 https://codepen.io/savalazic/details/QKwERN
