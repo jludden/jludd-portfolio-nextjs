@@ -189,13 +189,23 @@ export default function WorkHistory() {
     const items = [
         {
             title: "Software Engineer",
-            startDate: "Sep 2020",
+            startDate: "Sep 2021",
             endDate: "Present",
+            img: "static/Bloomberg_logo.png",
+            altText:"Logo for Bloomberrg",
+            externalLink: "https://www.bloomberg.com/",
+            details: "Just started!",
+            chips: ["TypeScript"],
+        },
+        {
+            title: "Software Engineer",
+            startDate: "Sep 2020",
+            endDate: "Sep 2021",
             img: "static/Olo_logo.png",
             altText:"Logo for Olo Online Ordering",
             externalLink: "https://www.olo.com/",
-            details: "Contributed to platform responsible for handling millions of online orders per day. Implemented 3ds functionality using iFrames to limit PCI scope.",
-            chips: ["C#", "F#", "AWS", "Docker", "Kafka"],
+            details: "Contributed to SAAS platform responsible for handling millions of online orders per day as company successfully IPOed. Implemented 3D-Secure \"Credit-card iFrame\" to limit PCI scope for Panda Express online ordering.",
+            chips: ["C#", "TypeScript", "F#", "AWS", "Docker"],
         },
         {
             title: "Senior Software Developer",
@@ -205,7 +215,7 @@ export default function WorkHistory() {
             altText: "Logo for EPAM",
             externalLink: "https://www.epam.com/about/fact-sheet",
             companyTagline: "International Consulting Firm for Fortune 1000",
-            chips: ["ReactJs", "C# .Net Core", "MongoDb", "Java", "Oracle"],
+            chips: ["ReactJs", "C# .Net Core", "MongoDb", "Java"],
             details:'Consulted for a large international investment bank, developing applications for middle office and fund management integrations.',
             detailsExtended: `Contributed to a structured funds platform with heavy microservices and email integrations (Java, Play Framework, Oracle DB, React)
             Designed a greenfield web application to automate a previously manual workflow for processing corporate action events for a global investment bank (C#, .NET Core, React, Redux, JavaScript, mongoDB)
